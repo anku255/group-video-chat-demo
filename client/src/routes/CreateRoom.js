@@ -8,7 +8,9 @@ const CreateRoom = (props) => {
     }
 
     return (
-        <button onClick={create}>Create room</button>
+        <div className="w-full h-screen flex justify-center items-center">
+            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={create}>Create room</button>
+        </div>
     );
 };
 

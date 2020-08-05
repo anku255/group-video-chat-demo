@@ -7,14 +7,15 @@ const Container = styled.div`
     padding: 20px;
     display: flex;
     height: 100vh;
-    width: 90%;
+    width: 100%;
     margin: auto;
     flex-wrap: wrap;
 `;
 
 const StyledVideo = styled.video`
-    height: 40%;
-    width: 50%;
+    height: 100%;
+    width: 100%;
+    object-fit: center;
 `;
 
 const Video = (props) => {
@@ -27,7 +28,9 @@ const Video = (props) => {
     }, []);
 
     return (
-        <StyledVideo playsInline autoPlay ref={ref} />
+        <div className="m-4 w-1/3 h-64 border-8 border-teal-500">
+            <StyledVideo playsInline autoPlay ref={ref} />
+        </div>
     );
 }
 
@@ -149,7 +152,9 @@ const Room = (props) => {
 
     return (
         <Container>
-            <StyledVideo muted ref={userVideo} autoPlay playsInline />
+            <div className="m-4 w-1/3 h-64 border-8 border-teal-500">
+                <StyledVideo muted ref={userVideo} autoPlay playsInline />
+            </div>
             {peers.map((peer, index) => {
                 return (
                     <Video key={index} peer={peer} />
